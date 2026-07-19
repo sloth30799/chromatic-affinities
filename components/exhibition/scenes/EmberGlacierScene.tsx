@@ -1,27 +1,68 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import {
+  getSpecimen,
+  SpecimenArtwork,
+  type SpecimenViewport,
+} from "@/components/campaign/SpecimenArtwork";
+
+const sparks = Array.from({ length: 6 }, (_, index) => index + 1);
+
+function useSceneViewport(): SpecimenViewport {
+  const [viewport, setViewport] = useState<SpecimenViewport>("desktop");
+
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 760px)");
+    const sync = () => setViewport(query.matches ? "mobile" : "desktop");
+    sync();
+    query.addEventListener("change", sync);
+    return () => query.removeEventListener("change", sync);
+  }, []);
+
+  return viewport;
+}
+
+/** Thermal fracture keeps the three catalog specimens as the only material targets. */
 export function EmberGlacierScene() {
-  const sparks = Array.from({ length: 19 }, (_, index) => index);
-  const crystals = Array.from({ length: 9 }, (_, index) => index);
+  const viewport = useSceneViewport();
+
   return (
     <div className="scene-art scene-art--ember-glacier" aria-hidden="true">
-      <div className="ember-backdrop" />
-      <div className="glacier-backdrop" />
-      <div className="red-cliff red-cliff--one" /><div className="red-cliff red-cliff--two" />
-      <div className="heat-haze" />
-      <div className="ember-core"><i /><i /><i /><b /></div>
-      <div className="ice-core"><i /><i /><i /><i /><i /><i /><b /></div>
-      <div className="poppy-scene"><i /><i /><i /><i /><b /></div>
-      <div className="koi-scene"><i /><i /><b /></div>
-      <div className="spark-field">
-        {sparks.map((spark) => (
-          <i key={spark} className={`spark spark--${spark + 1}`}><span /></i>
-        ))}
+      <div className="ember-territory" />
+      <div className="glacier-territory" />
+      <div className="ember-escarpment" />
+      <div className="glacier-shelf" />
+
+      <SpecimenArtwork
+        specimen={getSpecimen("AC-03-A")}
+        viewport={viewport}
+        placement="contract"
+        decorative
+        className="scene-specimen scene-specimen--vermilion-plate"
+      />
+      <SpecimenArtwork
+        specimen={getSpecimen("AC-03-B")}
+        viewport={viewport}
+        placement="contract"
+        decorative
+        className="scene-specimen scene-specimen--ember-cast"
+      />
+      <SpecimenArtwork
+        specimen={getSpecimen("AC-03-C")}
+        viewport={viewport}
+        placement="contract"
+        decorative
+        className="scene-specimen scene-specimen--glacier-shard"
+      />
+
+      <div className="prism-seam" />
+      <div className="prism-hero" />
+      <div className="thermal-sparks">
+        {sparks.map((spark) => <i key={spark} className={`thermal-spark thermal-spark--${spark}`} />)}
       </div>
-      <div className="crystal-field">
-        {crystals.map((crystal) => (
-          <i key={crystal} className={`crystal crystal--${crystal + 1}`}><span /></i>
-        ))}
-      </div>
-      <div className="glacier-water" />
+      <div className="ember-ground" />
+      <div className="ice-ground" />
     </div>
   );
 }

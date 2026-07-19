@@ -1,0 +1,222 @@
+.artwork {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.contractPlacement {
+  position: absolute;
+  left: var(--specimen-box-x);
+  top: var(--specimen-box-y);
+  width: var(--specimen-box-width);
+  height: var(--specimen-box-height);
+}
+
+.shape {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.tileShadow { fill: #021522; opacity: .48; }
+.tileBody { fill: #eee8d9; }
+.tileBevel { fill: #b6aa96; }
+.tileGlaze { fill: #f1eadc; stroke: #1d6c99; stroke-width: 1.7; }
+.tileBorder { fill: none; stroke: #0a4a84; stroke-width: 2.2; }
+.tileMotif { fill: #0a4a84; opacity: .94; }
+.tileSheen { fill: none; stroke: #fff; stroke-width: 1.5; opacity: .72; stroke-linecap: round; }
+.tileChip { fill: #eee8d9; stroke: #b6aa96; stroke-width: .6; }
+
+.panelShadow { fill: #02131f; opacity: .42; }
+.panelBody { fill: #0c3867; }
+.panelWaterline { fill: #1a7aa1; opacity: .8; }
+.panelReflection { fill: #9bd9e8; opacity: .38; }
+.panelEdge { fill: #07274b; }
+
+.puckShadow { fill: #542724; opacity: .38; }
+.puckLid, .puckBody { fill: #aaa7a1; stroke: #eee9df; stroke-width: 1.5; }
+.puckMirror { fill: #d8ddd9; stroke: #696d6b; stroke-width: 1.2; }
+.puckHinge { fill: #686661; }
+.puckWell { fill: #5f5954; stroke: #44403d; stroke-width: 1.1; }
+.puckBloom { fill: #ef8650; }
+.puckCracks { fill: none; stroke: #a74632; stroke-width: 1.25; opacity: .72; stroke-linecap: round; stroke-linejoin: round; }
+.puckGrain { fill: #8f392e; opacity: .72; }
+.puckDust { fill: #d6683d; opacity: .88; }
+.puckApplicator { fill: #686661; }
+.puckSponge { fill: #d9c5b2; stroke: #7a7069; stroke-width: .7; }
+
+.organzaShadow { fill: #112c24; opacity: .48; }
+.organzaBody { fill: #5b9870; opacity: .78; }
+.organzaFold { fill: none; stroke: #d4efd1; stroke-width: 2.2; opacity: .68; }
+.organazaWeft { fill: none; stroke: #c3e7b5; stroke-width: 1.3; opacity: .54; }
+
+.weaveShadow { fill: #291343; opacity: .48; }
+.weaveBody { fill: #b64ef0; }
+.weaveWarp { fill: none; stroke: #f2c5ff; stroke-width: 5; opacity: .82; }
+.weaveWeft { fill: none; stroke: #6d218f; stroke-width: 4; opacity: .8; }
+.weaveFlash { fill: #f6d2ff; opacity: .86; }
+
+.vialShadow { fill: #0c1e2c; opacity: .45; }
+.vialGlass { fill: #a6e3b8; fill-opacity: .34; stroke: #dcf5d7; stroke-width: 2; }
+.vialCap { fill: #d2d6c5; }
+.vialLiquid { fill: #7bcf65; fill-opacity: .8; }
+.vialGlint { fill: none; stroke: #f2ffec; stroke-width: 3; opacity: .82; stroke-linecap: round; }
+.vialSediment { fill: #315f38; opacity: .75; }
+
+.plateShadow { fill: #35100d; opacity: .46; }
+.plateBody { fill: #c6b3a5; }
+.plateGlow { fill: #d62d1f; stroke: #ef5c38; stroke-width: 1.3; }
+.plateHighlight { fill: #ffd3b2; opacity: .42; }
+.plateEdge { fill: #756861; opacity: .95; }
+.plateMount { fill: #3d3430; stroke: #eee1d5; stroke-width: 1; }
+
+.castShadow { fill: #481514; opacity: .46; }
+.castBody { fill: #b83322; }
+.castMolten { fill: #ee6130; }
+.castCrust { fill: none; stroke: #721d1a; stroke-width: 4; opacity: .9; }
+.castBreak { fill: none; stroke: #f3a04f; stroke-width: 2; opacity: .86; }
+
+.shardShadow { fill: #07394e; opacity: .42; }
+.shardBody { fill: #7de4ee; fill-opacity: .7; stroke: #d9ffff; stroke-width: 1.5; }
+.shardFacetOne { fill: #ddffff; fill-opacity: .76; }
+.shardFacetTwo { fill: #23a9c6; fill-opacity: .78; }
+.shardFacetThree { fill: #55c9df; fill-opacity: .7; }
+.shardFacetFour { fill: #a8f5f4; fill-opacity: .76; }
+.shardEdge { fill: none; stroke: #e0ffff; stroke-width: 1.4; opacity: .85; }
+
+.clayShadow { fill: #2d160d; opacity: .46; }
+.clayBody { fill: #79401f; }
+.clayPlane { fill: #a76534; }
+.clayBreak { fill: none; stroke: #3c1e11; stroke-width: 4; opacity: .88; }
+.clayGrog { fill: #d4a26d; opacity: .7; }
+
+.vesselShadow { fill: #796a5c; opacity: .34; }
+.vesselBody { fill: #ede3cc; }
+.vesselRim { fill: #fff6df; stroke: #cfc2a8; stroke-width: 2.2; }
+.vesselWell { fill: #c8bca8; }
+.vesselLight { fill: none; stroke: #ffffff; stroke-width: 5; opacity: .7; stroke-linecap: round; }
+.vesselLip { fill: none; stroke: #fffdf3; stroke-width: 2; opacity: .94; }
+
+.sheetShadow { fill: #76675b; opacity: .3; }
+.sheetFront { fill: #ded5c1; }
+.sheetFold { fill: #fff8e5; }
+.sheetReverse { fill: #bcb09d; }
+.sheetCrease { fill: none; stroke: #8c7f70; stroke-width: 2; }
+.sheetLight { fill: none; stroke: #ffffff; stroke-width: 2; opacity: .76; }
+
+.studyFigure {
+  display: grid;
+  gap: .75rem;
+  margin: 0;
+  min-width: 0;
+}
+
+.studyFigureArtwork {
+  width: min(100%, 28rem);
+  aspect-ratio: 1 / .76;
+  overflow: hidden;
+  border-block: 1px solid currentColor;
+}
+
+.studyFigureCaption {
+  display: grid;
+  gap: .2rem;
+  max-width: 42rem;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: .78rem;
+  line-height: 1.35;
+}
+
+.studyFigureId { letter-spacing: .08em; }
+.studyFigureName { font-family: var(--font-serif, Georgia, serif); font-size: 1.1rem; }
+.studyFigureFact { opacity: .74; }
+
+.testGallery {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: clamp(1rem, 3vw, 3rem);
+  color: #171410;
+  background: #eee6d7;
+  font-family: var(--font-sans, system-ui, sans-serif);
+}
+
+.testGalleryHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 110rem;
+  margin: 0 auto 1.5rem;
+  padding-block-end: .75rem;
+  border-block-end: 1px solid #171410;
+}
+
+.testGalleryHeading {
+  margin: 0;
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 500;
+}
+
+.testGalleryControls { display: flex; gap: .5rem; }
+
+.testGalleryControls button {
+  padding: .45rem .65rem;
+  border: 1px solid #171410;
+  border-radius: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+}
+
+.testGalleryControls button[aria-pressed="true"] { color: #eee6d7; background: #171410; }
+
+.testGalleryMatrix {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(.9rem, 2vw, 2rem);
+  max-width: 110rem;
+  margin: 0 auto;
+}
+
+.testGallerySample {
+  display: grid;
+  grid-template-rows: minmax(8rem, 15vw) auto;
+  gap: .55rem;
+  min-width: 0;
+  margin: 0;
+  padding-block: .25rem .75rem;
+  border-block-end: 1px solid rgba(23, 20, 16, .42);
+}
+
+.testGalleryArtwork { min-width: 0; min-height: 0; overflow: hidden; }
+
+.testGalleryCaption {
+  display: grid;
+  gap: .12rem;
+  font-size: .72rem;
+  line-height: 1.3;
+}
+
+.testGalleryCaption strong { font-weight: 600; letter-spacing: .06em; }
+.testGalleryCaption span:last-child { opacity: .7; }
+
+@media (max-width: 700px) {
+  .testGallery { padding: 1rem; }
+  .testGalleryMatrix { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .testGallerySample { grid-template-rows: minmax(7rem, 36vw) auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .artwork, .shape, .testGallery { animation: none !important; transition: none !important; }
+}

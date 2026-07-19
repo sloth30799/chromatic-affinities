@@ -1,0 +1,64 @@
+/* Chapter 04 — material fold. Shared catalogue silhouettes make the earth, vessel, and fired sheet legible before the gutter closes. */
+.scene--cacaoIvory {
+  --chapter-ink: #fffaf1;
+  --chapter-muted-ink: #f0dfca;
+  --chapter-faint-ink: #fff7e9;
+  --focus-ink: #fff8de;
+  --focus-halo: rgba(50, 27, 16, .74);
+  --hotspot-pulse: rgba(255, 246, 221, .72);
+  --hotspot-fill: rgba(95, 49, 26, .2);
+}
+
+.scene--cacaoIvory .world-label--to { color: #302016; background: linear-gradient(270deg, rgba(255, 251, 240, .88), rgba(230, 211, 178, .59)); text-shadow: none; }
+.scene--cacaoIvory .world-label--to span, .scene--cacaoIvory .world-label--to strong { color: #302016; }
+.scene--cacaoIvory .transformation-caption { border-color: rgba(255, 248, 233, .44); background: #301d16; }
+.scene-art--cacao-ivory { contain: layout paint style; }
+
+.cacao-territory { z-index: 0; inset: 0 50% 0 0; overflow: hidden; background: radial-gradient(ellipse 58% 48% at 34% 20%, rgba(153, 103, 77, .48), transparent 63%), radial-gradient(ellipse 58% 64% at 20% 90%, #211310 0 18%, transparent 69%), linear-gradient(145deg, #613a2d 0, #4a2c24 49%, #2d1916 100%); }
+.cacao-territory::after { position: absolute; inset: 0; content: ""; opacity: calc(var(--handoff) * .42); background: repeating-linear-gradient(111deg, transparent 0 18px, rgba(228, 167, 111, .5) 19px 21px, transparent 22px 45px); transform: translateX(calc(var(--handoff) * 9vw)); }
+.ivory-territory { z-index: 0; inset: 0 0 0 50%; overflow: hidden; background: radial-gradient(ellipse 54% 42% at 73% 19%, rgba(255, 254, 247, .94), transparent 61%), radial-gradient(ellipse 61% 69% at 89% 88%, rgba(190, 165, 126, .28), transparent 71%), linear-gradient(138deg, #f3e8d3 0 46%, #ddc9a8 100%); }
+.ivory-territory::after { position: absolute; inset: 0; content: ""; opacity: calc(var(--handoff) * .7); background: linear-gradient(105deg, rgba(117, 71, 42, .46), rgba(255, 253, 244, .86) 40%, rgba(226, 188, 140, .68) 62%, rgba(246, 226, 192, .28)); transform: translateX(calc((1 - var(--handoff)) * 12vw)); }
+
+.cacao-fibers { z-index: 2; inset: 7% 50% 12% 2%; opacity: calc(.38 + var(--build) * .38 - var(--restore) * .16); background: repeating-linear-gradient(121deg, transparent 0 19px, rgba(226, 165, 113, .43) 20px 21px, transparent 22px 45px), repeating-linear-gradient(35deg, transparent 0 31px, rgba(46, 24, 20, .5) 32px 34px, transparent 35px 61px); transform: translateX(calc((var(--collision) - var(--restore)) * 2vw)); }
+.paper-field { z-index: 2; top: 5%; right: 3%; width: 42%; height: 90%; opacity: calc(.46 + var(--build) * .35 - var(--restore) * .15); background: repeating-linear-gradient(164deg, transparent 0 23px, rgba(131, 101, 71, .24) 24px 25px, transparent 26px 53px), linear-gradient(132deg, rgba(255, 253, 246, .82), rgba(213, 191, 154, .36)); transform: translateX(calc((var(--collision) - var(--restore)) * -2vw)) rotate(calc(-4deg + var(--build) * 7deg - var(--restore) * 7deg)); }
+
+/* Contract geometry belongs to the primitive; the late transform is solely the outgoing-life pass. */
+.scene-art--cacao-ivory .scene-specimen { z-index: 10; transform-origin: 50% 50%; }
+.scene-specimen--cacao-clay { opacity: calc(.69 + var(--build) * .28); filter: drop-shadow(0 15px 25px rgba(31, 14, 8, .34)); transform: translate3d(calc(var(--handoff) * -5vw), calc(var(--handoff) * 2vh), 0) rotate(calc(var(--handoff) * -5deg)); }
+.scene-specimen--cacao-clay::after { position: absolute; inset: 7%; content: ""; opacity: calc(.09 + var(--collision) * .25 + var(--handoff) * .24); background: radial-gradient(circle at 35% 58%, rgba(233, 179, 112, .55), transparent 39%); mix-blend-mode: screen; transform: translateX(calc(var(--collision) * 14%)); }
+.scene-specimen--porcelain-vessel { z-index: 13 !important; opacity: calc(.71 + var(--build) * .26); filter: drop-shadow(0 17px 27px rgba(84, 61, 42, .3)); transform: translate3d(calc(var(--handoff) * 11vw), calc(var(--handoff) * -2vh), 0) rotate(calc(var(--handoff) * 7deg)); }
+.scene-specimen--porcelain-vessel::after { position: absolute; inset: 5% 7%; content: ""; opacity: calc(.12 + var(--collision) * .3 + var(--handoff) * .56); background: linear-gradient(123deg, transparent 0 36%, rgba(255, 255, 250, .95) 47%, transparent 58%); mix-blend-mode: screen; transform: translateX(calc(var(--handoff) * 34%)); }
+.scene-specimen--folded-sheet { z-index: 14 !important; opacity: calc(.56 + var(--build) * .28); filter: drop-shadow(0 12px 19px rgba(67, 43, 29, .25)); transform: translate3d(calc(var(--handoff) * 2vw), calc(var(--handoff) * -2vh), 0) rotate(calc(var(--handoff) * -8deg)); }
+.scene-specimen--folded-sheet::after { position: absolute; inset: 6%; content: ""; opacity: calc(.1 + var(--fusion) * .31 + var(--handoff) * .22); background: linear-gradient(141deg, transparent 0 43%, rgba(255, 255, 249, .82) 44% 49%, transparent 50%); mix-blend-mode: screen; }
+
+.kiln-gutter { z-index: 7; top: -2%; bottom: -2%; left: 50%; width: 30px; opacity: calc(.74 + var(--collision) * .22 - var(--restore) * .06); background: repeating-linear-gradient(104deg, #4a2a20 0 10px, #be7044 11px 16px, #f7d9a4 17px 22px, #fff9e7 23px 27px, #b58d60 28px 34px); transform: translateX(-50%) skewX(calc((var(--collision) - var(--restore)) * -5deg)) scaleX(calc(.4 + var(--collision) * 1.75 - var(--restore) * .66)); transform-origin: 50% 50%; }
+.fold-hero { z-index: 8; top: 52%; left: 50%; width: clamp(180px, 24vw, 350px); height: clamp(230px, 30vw, 430px); contain: paint; isolation: isolate; opacity: clamp(0, calc(var(--collision) * 1.12 - var(--restore) * .62), .9); transform: translate(-50%, -50%) scale(calc(.5 + var(--collision) * .38 + var(--fusion) * .12 - var(--restore) * .2)); }
+.fold-hero i, .fold-hero b { position: absolute; display: block; }
+.fold-hero i { top: 9%; width: 53%; height: 81%; border: 1px solid rgba(255, 247, 230, .46); background: repeating-linear-gradient(105deg, transparent 0 14px, rgba(237, 214, 177, .38) 15px 17px, transparent 18px 30px), linear-gradient(135deg, rgba(126, 75, 45, .86), rgba(255, 249, 235, .84)); }
+.fold-hero i:first-child { left: -2%; clip-path: polygon(0 0, 100% 12%, 69% 100%, 0 78%); transform: translateX(calc(var(--collision) * -5vw + var(--restore) * 5vw)) rotate(calc(-8deg - var(--collision) * 13deg + var(--restore) * 13deg)); }
+.fold-hero i:nth-child(2) { right: -2%; clip-path: polygon(0 12%, 100% 0, 100% 78%, 31% 100%); transform: translateX(calc(var(--collision) * 5vw - var(--restore) * 5vw)) rotate(calc(8deg + var(--collision) * 13deg - var(--restore) * 13deg)); }
+.fold-hero b { top: 29%; left: 39%; width: 22%; aspect-ratio: 1; border-radius: 50%; opacity: calc(.22 + var(--fusion) * .61 - var(--restore) * .32); background: radial-gradient(circle, #fffcef 0 22%, #e0b377 25% 45%, transparent 46%); box-shadow: 0 0 32px rgba(255, 244, 213, .52); }
+
+.grain-crossing { z-index: 15; inset: 0; opacity: clamp(0, calc(var(--build) * .8 + var(--collision) * .4 - var(--restore) * .82), .88); pointer-events: none; }
+.grain { position: absolute; width: 7px; height: 5px; border-radius: 50%; background: #b97853; transform: translate(calc(var(--build) * var(--grain-x) - var(--collision) * var(--brake-x) + var(--restore) * var(--brake-x)), calc(var(--build) * var(--grain-y))) rotate(var(--grain-tilt)); }
+.grain--1 { top: 72%; left: 18%; --grain-x: 22vw; --brake-x: 8vw; --grain-y: -17vh; --grain-tilt: 37deg; }.grain--2 { top: 51%; left: 29%; width: 5px; height: 4px; --grain-x: 15vw; --brake-x: 5vw; --grain-y: 7vh; --grain-tilt: -49deg; }.grain--3 { top: 81%; left: 33%; --grain-x: 13vw; --brake-x: 4vw; --grain-y: -24vh; --grain-tilt: 78deg; }.grain--4 { top: 43%; left: 21%; width: 5px; height: 4px; --grain-x: 23vw; --brake-x: 8vw; --grain-y: 13vh; --grain-tilt: -71deg; }.grain--5 { top: 63%; left: 42%; --grain-x: 5vw; --brake-x: 2vw; --grain-y: -9vh; --grain-tilt: 21deg; }
+
+.cacao-ground, .ivory-ground { z-index: 3; bottom: 0; height: 17%; opacity: calc(.72 - var(--collision) * .12 + var(--restore) * .12); }
+.cacao-ground { right: 50%; left: 0; background: linear-gradient(158deg, transparent 0 19%, #2c1916 20% 100%); transform: translateX(calc((var(--collision) - var(--restore)) * 2vw)); }
+.ivory-ground { right: 0; left: 50%; background: linear-gradient(158deg, transparent 0 19%, #c3a57b 20% 100%); transform: translateX(calc((var(--collision) - var(--restore)) * -2vw)); }
+
+@media (max-width: 760px) {
+  .paper-field { right: -5%; width: 54%; }
+  .fold-hero { width: min(67vw, 320px); height: min(82vw, 390px); }
+  .scene-specimen--porcelain-vessel { transform: translate3d(calc(var(--handoff) * 8vw), calc(var(--handoff) * -1vh), 0) rotate(calc(var(--handoff) * 6deg)); }
+  .grain:nth-child(n + 5) { display: none; }
+}
+
+@media (max-height: 470px) and (orientation: landscape) {
+  .grain:nth-child(n + 4) { display: none; }
+  .fold-hero { width: min(36vw, 300px); height: min(58vh, 340px); }
+  .cacao-ground, .ivory-ground { height: 24%; }
+}
+
+.exhibition[data-motion-preference="reduce"] .scene--cacaoIvory { --build: .84 !important; --collision: .72 !important; --fusion: .62 !important; --restore: 0 !important; }
+.exhibition[data-motion-preference="reduce"] .scene--cacaoIvory .grain-crossing { display: none; }

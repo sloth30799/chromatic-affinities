@@ -1,0 +1,27 @@
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+:focus-visible { outline: 2px solid #fff8dc; outline-offset: 4px; }
+.affinity-stage :focus-visible { outline-color: var(--focus-ink); box-shadow: 0 0 0 2px var(--focus-halo); }
+.chapter-heading { scrollbar-color: rgba(255, 248, 233, .56) transparent; }
+.stage-progress { width: min(180px, 42vw); height: 2px; margin-top: 20px; overflow: hidden; background: rgba(255, 248, 233, .36); }.stage-progress i { display: block; width: calc(var(--timeline) * 100%); height: 100%; background: #fff8e9; }
+.chapter-summary { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+.exhibition[data-motion-preference="reduce"] .affinity-stage {
+  --timeline: .5 !important;
+  --establish: 1 !important;
+  --build: 1 !important;
+  --collision: .5 !important;
+  --fusion: 0 !important;
+  --restore: 0 !important;
+  --handoff: 0 !important;
+}
+.exhibition[data-motion-preference="reduce"] .chapter-summary { position: absolute; z-index: 15; right: 24px; bottom: 21vh; width: min(320px, 48vw); max-height: 30dvh; height: auto; padding: 10px 12px; margin: 0; overflow-y: auto; clip: auto; color: var(--chapter-ink); background: rgba(7, 26, 45, .34); font-size: 11px; line-height: 1.45; white-space: normal; overscroll-behavior: contain; scrollbar-gutter: stable; }
+.exhibition[data-motion-preference="reduce"] .stage-progress { display: none; }
+.exhibition[data-motion-preference="reduce"] .transition-layer { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}
+
+@media (max-width: 760px) {
+  .exhibition[data-motion-preference="reduce"] .chapter-summary { right: 20px; bottom: 23vh; width: min(260px, 72vw); }
+}

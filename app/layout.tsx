@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Chromatic Affinities — A Digital Exhibition",
-  description: "A fullscreen interactive exhibition exploring four pairs of colors as eight interconnected worlds.",
+  title: {
+    default: "Chromatic Affinities",
+    template: "%s | Chromatic Affinities",
+  },
+  description: "A local, self-initiated interactive materials campaign concept.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

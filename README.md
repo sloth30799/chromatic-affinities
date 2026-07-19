@@ -1,52 +1,61 @@
 # Chromatic Affinities
 
-An original fullscreen digital exhibition built with Next.js. Native scrolling moves through four paired-color chapters and eight connected visual worlds; every scene is composed from semantic HTML, inline SVG, and CSS rather than image assets or WebGL.
+Chromatic Affinities is a self-initiated concept campaign for the fictional materials studio Atelier Chromatique. *Material Studies No. 01* asks how color, finish, and texture can feel tangible through a screen: four opposing color worlds meet in a living split-screen exhibition.
+
+The work is fictional and self-initiated. It is a local concept and implementation, not a client launch or a commercial storefront.
+
+## The studies
+
+- Tidal Aperture — Midnight Navy / Solar Apricot
+- Botanical Fluorescence — Moss Verdant / Electric Orchid
+- Thermal Fracture — Vermilion Ember / Glacier Cyan
+- Material Fold — Cacao Earth / Porcelain Ivory
+
+Each study runs on the same twelve-second, six-beat motion score: establish, build, seam attack, fusion, restore, and handoff. The materials are code-native CSS and SVG forms—glaze, textile, lacquer, resin, pigment, clay, and porcelain—rather than downloaded images or video.
+
+`/` is the moving exhibition. `/collection` is Collection 01’s restrained material register. `/case-study` is the public project explanation, including the motion, material, responsive, and accessibility decisions.
+
+## Accessibility and responsive behavior
+
+The exhibition has keyboard-accessible playback, chapter navigation, and Material notes. Reduced motion presents an immediate composed state with manual navigation and no automatic progression. Both editorial routes use normal document scrolling, retain visible focus, and are designed for desktop, tablet, mobile, short-height, and zoomed reading.
+
+## Stack
+
+Next.js App Router, React, TypeScript, Motion, CSS, inline SVG, Playwright, Vitest, and Sharp.
 
 ## Run locally
 
+Use npm and the committed lockfile:
+
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-Open `http://localhost:3000`.
-
-## Scripts
+Then open `http://127.0.0.1:3000`.
 
 ```bash
-npm run dev       # local development server
-npm run lint      # ESLint checks
-npm run typecheck # TypeScript without emitting files
-npm run build     # optimized production build
-npm run start     # serve a production build
+npm test
+npm run lint
+npm run typecheck
+env -u NEXT_PUBLIC_CA_TEST_MODE npm run build
 ```
 
-## Architecture
+Browser output should be directed to a private directory outside this checkout:
 
-- `app/page.tsx` renders the exhibition; `app/globals.css` holds the visual system and chapter artwork.
-- `data/exhibition.ts` is the single typed source for title copy, color metadata, transformation names, hotspot positions, poetic notes, and color facts.
-- `components/exhibition/Chapter.tsx` owns each tall native-scroll track and its sticky fullscreen stage.
-- `components/exhibition/scenes/` contains the four distinct scene structures. The CSS turns the Navy moon into a peach sun, the moss stone into an orchid, the ember into ice, and the cacao pod into porcelain.
-- `hooks/useChapterMotion.ts` uses Motion scroll values, a responsive spring, and named derived phases for atmosphere, hero morph, particles, foreground, and editorial transitions. It writes those values directly to CSS variables without scroll-driven component re-renders.
-- `hooks/usePointerDepth.ts` adds very restrained pointer depth only on fine hover pointers; it is skipped for touch and reduced-motion users.
+```bash
+npm run e2e -- --reporter=line --output='/absolute/private/playwright-output'
+```
 
-## Interaction and accessibility
+Evidence capture is local-only and opt-in. It creates a test-only local production server on an isolated loopback port, writes only to the supplied external directory, and records its source binding in the evidence manifest:
 
-Each chapter includes three reachable field-note hotspots. They are semantic buttons with visible focus treatment and work with mouse, touch, and keyboard. A nearby annotation contains a poetic observation and a factual note; it can be closed with its control, click-away, or Escape.
+```bash
+CA_EVIDENCE_DIR='/absolute/private/evidence' npm run evidence:capture
+CA_EVIDENCE_DIR='/absolute/private/evidence' npm run evidence:analyze
+```
 
-Native document scrolling is never intercepted. Chapter navigation uses anchor links, so standard browser behavior remains intact. Ambient loops run only on the active chapter. `prefers-reduced-motion` fixes the worlds at a calm composed state and removes scrubbed motion, spring chasing, and ambient animation while preserving all copy, chapters, and controls.
+No deployment, hosted service, remote asset pipeline, contact destination, or publication workflow is included here.
 
-## Customize the exhibition
+## Role and availability
 
-Edit `data/exhibition.ts` to change:
-
-- chapter titles, hexadecimal colors, atmospheres, and transformation labels;
-- editorial chapter descriptions;
-- hotspot names, notes, facts, and percentage positions.
-
-For visual changes, use the matching scene component under `components/exhibition/scenes/` together with its named CSS section in `app/globals.css`. The scene DOM is deliberately asset-free, so new organic forms can be introduced without an image pipeline.
-
-## Notes
-
-The project uses Next.js App Router, TypeScript, Tailwind CSS v4 (for the base utility pipeline), and Motion for scroll choreography and annotation presence transitions. It has no remote font, image, API, backend, audio, or WebGL dependency.
-# chromatic-affinities
+Concept, design, and development by Han. Available for art-directed interactive web experiences.

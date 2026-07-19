@@ -1,0 +1,60 @@
+/* Chapter 03 — thermal fracture. The catalogue plate and shard hold their silhouettes; only their surfaces keep moving. */
+.scene--emberGlacier {
+  --chapter-ink: #f8fffb;
+  --chapter-muted-ink: #d5f4f2;
+  --chapter-faint-ink: #dcffff;
+  --focus-ink: #fff4cf;
+  --focus-halo: rgba(37, 12, 9, .74);
+  --hotspot-pulse: rgba(218, 255, 255, .7);
+  --hotspot-fill: rgba(255, 244, 207, .22);
+  --glacier-tail-shift: clamp(0vw, calc(var(--timeline) * 20vw - 16vw), .8vw);
+}
+
+.scene--emberGlacier .world-label--to { color: #082632; background: linear-gradient(270deg, rgba(226, 255, 255, .86), rgba(152, 229, 237, .58)); text-shadow: none; }
+.scene--emberGlacier .world-label--to span, .scene--emberGlacier .world-label--to strong { color: #082632; }
+.scene--emberGlacier .transformation-caption { border-color: rgba(180, 246, 255, .42); background: #041b26; }
+.scene-art--ember-glacier { contain: layout paint style; }
+
+.ember-territory { z-index: 0; inset: 0 50% 0 0; overflow: hidden; background: radial-gradient(ellipse 47% 42% at 73% 42%, rgba(255, 155, 85, .52), transparent 37%), radial-gradient(ellipse 46% 41% at 16% 88%, #5f201c, transparent 70%), linear-gradient(138deg, #6e211d, #b73428 57%, #e4472e); }
+.ember-territory::after { position: absolute; inset: 0; content: ""; opacity: calc(var(--handoff) * .42); background: linear-gradient(112deg, transparent 0 32%, rgba(255, 225, 171, .72) 47%, rgba(118, 25, 20, .52) 62%, transparent 78%); transform: translateX(calc(var(--handoff) * 18vw)); }
+.glacier-territory { z-index: 0; inset: 0 0 0 50%; overflow: hidden; background: radial-gradient(ellipse 43% 31% at 70% 17%, rgba(255, 255, 255, .83), transparent 47%), radial-gradient(ellipse 54% 48% at 15% 78%, rgba(64, 160, 188, .48), transparent 62%), linear-gradient(142deg, #4f9fbc, #8fe7f2 55%, #d5ffff); }
+.glacier-territory::after { position: absolute; inset: 0; content: ""; opacity: clamp(0, calc(var(--handoff) * 1.24), .9); background: linear-gradient(110deg, rgba(12, 76, 108, .92), rgba(239, 255, 255, .7) 38%, rgba(57, 180, 207, .82) 56%, rgba(7, 48, 76, .58)); transform: translateX(calc((1 - var(--handoff)) * 13vw)); }
+
+.ember-escarpment { z-index: 2; right: 50%; bottom: -2%; left: -2%; height: 38%; opacity: calc(.86 - var(--collision) * .2 + var(--restore) * .2); background: repeating-linear-gradient(151deg, #5b1d19 0 21px, #922920 22px 44px, #d94a30 45px 67px); transform: translateX(calc((var(--collision) - var(--restore)) * 4vw)); }
+.glacier-shelf { z-index: 2; right: -2%; bottom: -2%; left: 50%; height: 35%; opacity: calc(.86 - var(--collision) * .17 + var(--restore) * .17); background: repeating-linear-gradient(162deg, #d7ffff 0 24px, #8edce6 25px 48px, #559fbb 49px 73px); transform: translateX(calc((var(--collision) - var(--restore)) * -4vw + var(--glacier-tail-shift))); }
+
+/* Contract placement stays owned by SpecimenArtwork; these rules only add material light and late outgoing life. */
+.scene-art--ember-glacier .scene-specimen { z-index: 10; transform-origin: 50% 50%; }
+.scene-specimen--vermilion-plate { opacity: calc(.7 + var(--build) * .28); box-shadow: 0 18px 32px rgba(60, 12, 9, .34); transform: translate3d(calc(var(--handoff) * -5vw), calc(var(--handoff) * 2vh), 0) rotate(calc(var(--handoff) * -5deg)); }
+.scene-specimen--vermilion-plate::after { position: absolute; inset: 7% 9% 12% 11%; content: ""; opacity: calc(.14 + var(--collision) * .36 + var(--handoff) * .3); background: linear-gradient(122deg, transparent 0 34%, rgba(255, 238, 199, .88) 46%, transparent 57%); mix-blend-mode: screen; transform: translateX(calc((var(--collision) - var(--restore)) * 24% + var(--handoff) * 31%)); }
+.scene-specimen--ember-cast { z-index: 12 !important; opacity: calc(.56 + var(--build) * .29); filter: drop-shadow(0 11px 17px rgba(65, 13, 10, .27)); transform: translate3d(calc(var(--handoff) * -2vw), calc(var(--handoff) * 2vh), 0) rotate(calc(var(--handoff) * -9deg)); }
+.scene-specimen--ember-cast::after { position: absolute; inset: 15%; content: ""; opacity: calc(.1 + var(--fusion) * .36 + var(--handoff) * .28); background: radial-gradient(ellipse at 37% 57%, rgba(255, 218, 126, .88), transparent 36%); mix-blend-mode: screen; transform: translateX(calc(var(--collision) * 13%)); }
+.scene-specimen--glacier-shard { z-index: 13 !important; opacity: calc(.7 + var(--build) * .27); filter: drop-shadow(0 15px 27px rgba(13, 91, 118, .34)); transform: translate3d(calc(var(--handoff) * 17vw), calc(var(--handoff) * -3vh), 0) rotate(calc(var(--handoff) * 14deg)); }
+.scene-specimen--glacier-shard::after { position: absolute; inset: 5%; content: ""; opacity: calc(.13 + var(--collision) * .27 + var(--handoff) * .54); background: linear-gradient(120deg, transparent 0 31%, rgba(255, 255, 255, .9) 47%, transparent 59%), linear-gradient(29deg, transparent 0 51%, rgba(53, 184, 211, .58) 52% 67%, transparent 68%); mix-blend-mode: screen; transform: translateX(calc(var(--handoff) * 31%)); }
+
+.prism-seam { z-index: 7; top: -2%; bottom: -2%; left: 50%; width: 30px; opacity: calc(.68 + var(--collision) * .25 - var(--restore) * .1); background: repeating-linear-gradient(118deg, #6f251f 0 12px, #f09a59 13px 17px, #eaffff 18px 23px, #5eb4cf 24px 31px); transform: translateX(-50%) skewX(calc((var(--collision) - var(--restore)) * -6deg)) scaleX(calc(.42 + var(--collision) * 1.65 - var(--restore) * .62)); transform-origin: 50% 50%; }
+.prism-hero { z-index: 8; top: 51%; left: 50%; width: clamp(150px, calc(12vw + var(--fusion) * 12vw), 340px); aspect-ratio: 1.08; opacity: clamp(0, calc(var(--collision) * 1.22 - var(--restore) * .54), 1); background: conic-gradient(from -25deg, #ffe1a2, #9cecf2 19%, #2d8bab 36%, #e45335 53%, #ffd99a 71%, #b9fbfa); clip-path: polygon(50% 0, 92% 19%, 100% 55%, 70% 100%, 21% 88%, 0 39%); transform: translate(-50%, calc(-50% + 4vh - var(--collision) * 8vh + var(--restore) * 8vh)) rotate(calc(-18deg + var(--collision) * 24deg - var(--restore) * 24deg)) scale(calc(.3 + var(--collision) * .62 + var(--fusion) * .18 - var(--restore) * .28)); }
+.prism-hero::after { position: absolute; inset: 17%; content: ""; border: 1px solid rgba(248, 255, 255, .82); background: linear-gradient(138deg, transparent 48%, rgba(255, 240, 189, .78) 49% 51%, transparent 52%); transform: rotate(28deg); }
+
+.thermal-sparks { z-index: 14; inset: 0; opacity: calc(.16 + var(--build) * .72 - var(--restore) * .3); pointer-events: none; }
+.thermal-spark { position: absolute; width: 4px; height: 10px; background: linear-gradient(#fff3bb, #f27d43); transform: translate(calc(var(--build) * var(--spark-x) - var(--collision) * var(--brake-x) + var(--restore) * var(--brake-x)), calc(var(--build) * var(--spark-y) - var(--collision) * var(--brake-y) + var(--restore) * var(--brake-y))) rotate(var(--spark-tilt)); }
+.thermal-spark--1 { top: 72%; left: 23%; --spark-x: 25vw; --spark-y: -20vh; --brake-x: 13vw; --brake-y: -8vh; --spark-tilt: 24deg; }.thermal-spark--2 { top: 53%; left: 34%; width: 3px; height: 8px; --spark-x: 18vw; --spark-y: -9vh; --brake-x: 9vw; --brake-y: -4vh; --spark-tilt: -20deg; }.thermal-spark--3 { top: 80%; left: 31%; --spark-x: 19vw; --spark-y: -29vh; --brake-x: 10vw; --brake-y: -12vh; --spark-tilt: 31deg; }.thermal-spark--4 { top: 43%; left: 40%; width: 3px; height: 8px; --spark-x: 9vw; --spark-y: 4vh; --brake-x: 5vw; --brake-y: 2vh; --spark-tilt: -14deg; }.thermal-spark--5 { top: 62%; left: 18%; --spark-x: 30vw; --spark-y: -12vh; --brake-x: 15vw; --brake-y: -5vh; --spark-tilt: 17deg; }.thermal-spark--6 { top: 32%; left: 29%; width: 3px; height: 8px; --spark-x: 20vw; --spark-y: 12vh; --brake-x: 11vw; --brake-y: 6vh; --spark-tilt: -28deg; }
+
+.ember-ground, .ice-ground { z-index: 3; bottom: 0; height: 18%; opacity: calc(.68 - var(--collision) * .12 + var(--restore) * .12); }
+.ember-ground { right: 50%; left: 0; background: linear-gradient(160deg, transparent 0 20%, #511a18 21% 100%); transform: translateX(calc((var(--collision) - var(--restore)) * 2vw)); }
+.ice-ground { right: 0; left: 50%; background: linear-gradient(160deg, transparent 0 18%, #5bacc4 19% 100%); transform: translateX(calc((var(--collision) - var(--restore)) * -2vw)); }
+
+@media (max-width: 760px) {
+  .prism-hero { width: min(62vw, 275px); }
+  .scene-specimen--glacier-shard { transform: translate3d(calc(var(--handoff) * 13vw), calc(var(--handoff) * -2vh), 0) rotate(calc(var(--handoff) * 11deg)); }
+  .thermal-spark:nth-child(n + 5) { display: none; }
+}
+
+@media (max-height: 470px) and (orientation: landscape) {
+  .thermal-spark:nth-child(n + 4) { display: none; }
+  .prism-hero { width: min(37vw, 285px); }
+  .ember-ground, .ice-ground { height: 25%; }
+}
+
+.exhibition[data-motion-preference="reduce"] .scene--emberGlacier { --build: .84 !important; --collision: .76 !important; --fusion: .66 !important; --restore: 0 !important; --glacier-tail-shift: 0vw !important; }
+.exhibition[data-motion-preference="reduce"] .scene--emberGlacier .thermal-sparks { display: none; }
